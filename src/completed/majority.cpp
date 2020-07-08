@@ -1,16 +1,17 @@
 #include <bits/stdc++.h>
+using ll = long long;
 
-long long bit[150000], psa[150000];
-long long N;
+ll bit[150000], psa[150000];
+ll N;
 
-void upd(long long ind, long long val){
-    for(long long i =ind; i<= N; i += (i & (-i))){
+void upd(ll ind, ll val){
+    for(ll i =ind; i<= N; i += (i & (-i))){
         bit[i] += val;
     }
 }
 
-long long qry(long long x){
-    long long sum = 0;
+ll qry(ll x){
+    ll sum = 0;
     while(x > 0){
         sum += bit[x];
         x -= (x & (-x));
@@ -21,7 +22,7 @@ int main(){
     std::cin>>N;
     psa[0] = 0;
     bit[0] = 0;
-    long long mn = __LONG_LONG_MAX__;
+    ll mn = __LONG_LONG_MAX__;
     for(int i = 1; i <= N; i++){
         bit[i] = 0;
         int a;
@@ -35,7 +36,7 @@ int main(){
        // std::cout<<psa[i]<<" ";      
     }
     
-    long long ways =0;
+    ll ways =0;
     upd(psa[0],1);
     for(int i = 1; i <= N; i++){
         //std::cout<<"qry: "<<psa[i]<<" \n";
