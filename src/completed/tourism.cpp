@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 const int MM = 1e6+3;
 int N, K, a[MM], pmx[MM], smx[MM], day[MM]; ll dp[MM], t1[MM], t2[MM];
- int main() {
+int main() {
     cin >> N >> K;
     for (int i = 1; i <= N; i++) {
         cin >> a[i]; day[i] = (i+K-1)/K; 
