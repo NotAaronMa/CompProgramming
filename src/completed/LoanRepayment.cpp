@@ -4,14 +4,14 @@ using ll = long long;
 ll N,M,days;
 
 bool wrk(ll x){
-    ll  g = 0;
+    ll  M = 0;
     for(ll d = 0; d < days;){
-        ll y = (N-g)/x;
-        if( y <= M){g+= (days-d)*M; break;}
-        ll cnt = min((N-g - x*y)/y+1,days-d);
-        g+=cnt*y; d+=cnt;
+        ll y = (N-M)/x;
+        if( y <= M){M+= (days-d)*M; break;}
+        ll cnt = min((N-M - x*y)/y+1,days-d);
+        M+=cnt*y; d+=cnt;
     }
-    return g>=N;
+    return M>=N;
 }
 
 int main(){

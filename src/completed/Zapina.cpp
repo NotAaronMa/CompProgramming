@@ -17,7 +17,7 @@ ll pow(ll b, ll exp){
     ll half = pow(b,exp/2);
     if(exp%2 == 1){
         return (((b*half)%mod)*half)%mod;
-    }else{
+    }else{~`
         return (half*half)%mod;
     }
 }
